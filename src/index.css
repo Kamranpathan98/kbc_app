@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Macondo&family=Poppins:wght@400;500;600;700&family=Titillium+Web:wght@300;400&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Widths */
+  --width-150: 150px;
+  --width-190: 190px;
+  --width-225: 225px;
+  --width-275: 275px;
+  --width-300: 300px;
+  --width-340: 340px;
+  --width-350: 350px;
+  --width-375: 375px;
+  --width-460: 460px;
+  --width-656: 656px;
+  --width-880: 880px;
+  --width-508: 508px;
+
+  /* Heights */
+  --height-80: 80px;
+  --height-150: 150px;
+  --height-225: 225px;
+  --height-300: 300px;
+  --height-340: 340px;
+  --height-370: 370px;
+  --height-420: 420px;
+  --height-510: 510px;
+  --height-600: 600px;
+  --height-650: 650px;
+  --height-685: 685px;
+  --height-800: 800px;
+  --height-90vh: 90vh;
+
+  /* Min Widths */
+  --min-width-210: 210px;
+  --min-width-350: 350px;
+  --min-width-620: 620px;
+
+  /* Colors */
+  --heading-color: #2e2e2e;
+  --text-color: #515151;
+  --cart-num-bg: #e80013;
+  --primary: #f5f3f3;
+  --card-overlay: rgba(256, 256, 256, 0.4);
+  --light-text-gray: #9ca0ab;
+  --card: rgba(256, 256, 256, 0.8);
+  --cart-bg: #282a2c;
+  --cart-item: #2e3033;
+  --cart-total: #343739;
+
+  /* Screens */
+  --screen-sm: 640px;
+  --screen-md: 768px;
+  --screen-lg: 1024px;
+  --screen-xl: 1280px;
+  --screen-2xl: 1536px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+li:hover {
+  color: var(--heading-color) !important;
+}
