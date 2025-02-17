@@ -22,6 +22,7 @@ const Header = () => {
       type: actionType.SET_USER,
       user: providerData[0]
     })
+    localStorage.setItem("user", JSON.stringify(providerData[0]))
   };
   console.log(user ? user.photoURL : Avatar);
   return (
@@ -79,7 +80,7 @@ const Header = () => {
           <div className="relative">
             <motion.img
               whileTap={{ scale: 0.6 }}
-              src={user ? user.photoURL : Avatar}
+              src={Avatar}
               alt="profile"
               className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer rounded-full"
               onClick={handleUserClick}
