@@ -1,3 +1,5 @@
+import { getUserInfo } from "../utils/fetchLocalStorageData";
+
 export const initialState = {
-  user: localStorage.getItem("user") ?? null,
+  user: getUserInfo(),
 };

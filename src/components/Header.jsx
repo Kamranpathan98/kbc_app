@@ -1,5 +1,5 @@
 import React from "react";
-import { MdShoppingBasket } from "react-icons/md";
+import { MdAdd, MdLogout, MdShoppingBasket } from "react-icons/md";
 import Avatar from "../assets/img/avatar.png";
 import Logo from "../assets/img/logo.png";
 import { motion } from "framer-motion";
@@ -14,17 +14,21 @@ const Header = () => {
   const firebaseAuth = getAuth(app);
   const provider = new GoogleAuthProvider();
 
-  const [{user}, dispatch] = useStateValue()
+  const [{ user }, dispatch] = useStateValue();
 
   const handleUserClick = async () => {
-    const {user: {refreshToken, providerData}} = await signInWithPopup(firebaseAuth, provider);
-    dispatch({
-      type: actionType.SET_USER,
-      user: providerData[0]
-    })
-    localStorage.setItem("user", JSON.stringify(providerData[0]))
+    if (!user) {
+      const {
+        user: { refreshToken, providerData },
+      } = await signInWithPopup(firebaseAuth, provider);
+      dispatch({
+        type: actionType.SET_USER,
+        user: providerData[0],
+      });
+      localStorage.setItem("user", JSON.stringify(providerData[0]));
+    }
   };
-  console.log(user ? user.photoURL : Avatar);
+
   return (
     <header className="fixed z-50 w-screen p-6 px-16">
       {/* Desktop and tablet */}
@@ -85,6 +89,18 @@ const Header = () => {
               className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer rounded-full"
               onClick={handleUserClick}
             />
+            <div className="w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col absolute top-12 right-0 cursor-pointer">
+              {user && user.email === "kamranpathan98@gmail.com" && (
+                <Link to={"/createItem"}>
+                  <p className="px-4 py-2 flex items-center gap-3 hover:bg-slate-100 translate-all duration-100 ease-in-out">
+                    <MdAdd /> New Item
+                  </p>
+                </Link>
+              )}
+              <p className="px-4 py-2 flex items-center gap-3 hover:bg-slate-100 translate-all duration-100 ease-in-out">
+                <MdLogout /> Logout
+              </p>
+            </div>
           </div>
         </div>
       </div>
