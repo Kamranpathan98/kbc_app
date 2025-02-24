@@ -9,3 +9,46 @@ export const heroImgData = [
   { id: 3, name: "Chaat", price: 50, imgSrc: C3 },
   { id: 4, name: "French Fries", price: 40, imgSrc: Fi1 },
 ];
+
+export const categories = [
+  {
+    id: 1,
+    name: "Chicken",
+    urlParamName: 'chicken'
+  },
+  {
+    id: 2,
+    name: "Pasta",
+    urlParamName: 'pasta'
+  },
+  {
+    id: 3,
+    name: "Burger",
+    urlParamName: 'burger'
+  },
+  {
+    id: 4,
+    name: "Eggs",
+    urlParamName: 'eggs'
+  },
+  {
+    id: 5,
+    name: "Momos",
+    urlParamName: 'momos'
+  },
+  {
+    id: 6,
+    name: "Sandwich",
+    urlParamName: 'sandwich'
+  },
+  {
+    id: 7,
+    name: "Rolls",
+    urlParamName: 'rolls'
+  },
+  {
+    id: 8,
+    name: "Biryani",
+    urlParamName: 'biryani'
+  },
+];
